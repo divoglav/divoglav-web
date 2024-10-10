@@ -1,7 +1,7 @@
 type RenderingContext = WebGLRenderingContext | WebGL2RenderingContext;
 
 export class WebGL {
-  static createShader(gl: RenderingContext, type: GLenum, source: string) {
+  static compileShader(gl: RenderingContext, type: GLenum, source: string) {
     const shader = gl.createShader(type);
     if (!shader) throw new Error("Unable to create shader");
 
@@ -17,7 +17,7 @@ export class WebGL {
     return shader;
   }
 
-  static createProgram(gl: RenderingContext, vertexShader: WebGLShader, fragmentShader: WebGLShader) {
+  static linkProgram(gl: RenderingContext, vertexShader: WebGLShader, fragmentShader: WebGLShader) {
     const program = gl.createProgram();
     if (!program) throw new Error("Unable to create program");
 

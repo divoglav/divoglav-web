@@ -7,4 +7,9 @@ export class Utilities {
     const indexToRemove = array.indexOf(element);
     if (indexToRemove !== -1) array.splice(indexToRemove, 1);
   }
+
+  static capitalizeFirstLetter(text: string): string {
+    if (!text) return text;
+    return text.charAt(0).toUpperCase() + text.slice(1);
+  }
 }
